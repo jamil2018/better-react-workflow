@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import PostsPage from "../pages/PostsPage";
+import { HomePage, PostsPage } from "../pages";
 
 const BaseRoutes = () => {
   return (

@@ -1,41 +1,18 @@
-import { Link } from "react-router-dom";
+import { CssBaseline } from "@mui/material";
+import { Container } from "@mui/system";
+import { Navbar } from "../components";
+import { useTheme } from "@mui/material";
 
 const PageLayout = ({ children }) => {
+  const theme = useTheme();
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-light">
-        <div className="container-fluid">
-          <Link to="/" className="navbar-brand">
-            Better workflow
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link to="/" className="nav-link active" aria-current="page">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/posts" className="nav-link">
-                  Posts
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <div className="container-fluid mt-3">{children}</div>
+      <CssBaseline />
+      <Navbar />
+      <Container sx={{ marginX: theme.spacing(27) }} maxWidth="xl">
+        {children}
+      </Container>
     </>
   );
 };
